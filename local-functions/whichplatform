@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+## ---
+## The function whichplatform() checks if the given platform name matches the ones
+## of the current machine. If so returns 0 (process successfull exit code)
+## otherwise it return 1 (process failure exit code).
+##
+## The function is useful to source settings file conditionally.
+##
+
+whichplatform () {
+    local platform=$1
+
+    local detected_platform=$(uname -s)
+
+    [[ $detected_platform:l == $platform:l ]] && return 0;
+
+    return 1;
+}

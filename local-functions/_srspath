@@ -1,0 +1,3 @@
+#compdef srspath
+
+compadd ${${$(ls -d $HOME/sp/*/activate.sh):h}:t}

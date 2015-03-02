@@ -1,0 +1,100 @@
+# activate srs an a given branch
+
+function cdroot {
+    if [[ ! -d $BASE_DIR ]]; then
+        echo "No base dir set"
+        return 1
+    fi
+
+    cd $BASE_DIR
+}
+
+function cdro {
+    if [[ ! -d $BASE_DIR ]]; then
+        echo "No base dir set"
+        return 1
+    fi
+
+    cd $BASE_DIR/ROnline
+}
+
+function cdrh {
+    if [[ ! -d $BASE_DIR ]]; then
+        echo "No base dir set"
+        return 1
+    fi
+
+    cd $BASE_DIR/ROnline/RHard
+}
+
+function cdpy {
+    if [[ ! -d $BASE_DIR ]]; then
+        echo "No base dir set"
+        return 1
+    fi
+
+    cd $BASE_DIR/ROnline/RHard/Python
+}
+
+function cdscripts {
+    if [[ ! -d $BASE_DIR ]]; then
+        echo "No base dir set"
+        return 1
+    fi
+
+    cd $BASE_DIR/ROnline/RHard/scripts
+}
+
+function cdwcore {
+    if [[ ! -d $BASE_DIR ]]; then
+        echo "No base dir set"
+        return 1
+    fi
+
+    cd $BASE_DIR/www-core
+}
+
+function cddeploy {
+    if [[ ! -d $BASE_DIR ]]; then
+        echo "No base dir set"
+        return 1
+    fi
+
+    cd $BASE_DIR/deploy
+}
+
+function _srspath_activate {
+    if [[ -z $1 ]]; then
+        echo "Usage: srspath <repo_name>"
+        return 1
+    fi
+
+    if [[ -x $BASE_DIR ]]; then
+        echo "Environment already active. Can't switch to another one."
+        return 1
+    fi
+
+    BASE_DIR=$HOME/sp/$1
+
+    if [[ ! -d $BASE_DIR ]]; then
+        echo "No such directory:" $BASE_DIR
+        unset BASE_DIR
+        return 1
+    fi
+
+    if [[ ! -f $BASE_DIR/.hg/hgrc ]]; then
+        echo "Directory" $BASE_DIR "does not seem a regular mercurial repo"
+        unset BASE_DIR
+        return 1
+    fi
+
+    export RROOT=$BASE_DIR
+    export NOSE_REDNOSE=1
+
+    source $HOME/erlang/17.3/activate
+    source $BASE_DIR/activate.sh
+    cd $BASE_DIR/ROnline/RHard/Python
+}
+
+_srspath_activate "$@"
+
