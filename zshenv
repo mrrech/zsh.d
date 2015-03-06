@@ -52,7 +52,7 @@ export LESS="-R --ignore-case"
 ## virtualenvwrapper settings.
 
 if whichplatform 'darwin'; then
-    local VIRTUALENVWRAPPER=/usr/local/share/python/virtualenvwrapper.sh
+    local VIRTUALENVWRAPPER=/usr/local/bin/virtualenvwrapper.sh
     local WORKON_HOME=$HOME/Library/Python/Virtualenv
 elif whichplatform 'linux'; then
     local VIRTUALENVWRAPPER=/usr/local/bin/virtualenvwrapper_lazy.sh
