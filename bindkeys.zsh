@@ -9,7 +9,7 @@ bindkey -e
 bindkey -r '\ef'
 bindkey -r '\eb'
 bindkey '\ef' vi-forward-word
-bindkey '\eb' vi-backword-word
+bindkey '\eb' vi-backward-word
 
 bindkey -r '\ep'
 bindkey -r '\en'
