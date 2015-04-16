@@ -8,12 +8,12 @@ if [[ "$terminfo[colors]" -ge 8 ]]; then
     # make sure colors are loaded
     autoload -U colors && colors
 
-    PS1='%F{099}%D{%a %d %b} %F{111}%* %F{033}%n %m ${vcs_info_msg_0_}%F{reset}
+    PS1='%F{099}%D{%a %d %b} %F{111}%* %F{037}%n %F{039}%m ${vcs_info_msg_0_}%F{reset}
 %(?..%F{009}%?%f )%F{011}%#%F{reset} '
 
-    local FMT_PATH="%F{136}%s %r %b %F{green}%35<..<%S%<<%F{reset}"
-    local FMT_ACTION="%F{136}%s %r %b %a %F{green}%35<..<%S%<<%F{reset}"
-    local FMT_NOVCS="%F{green}%45<..<%~%<<%F{reset}"
+    local FMT_PATH="%F{196}%s %F{185}%r %F{208}%b %F{40}%35<..<%S%<<%F{reset}"
+    local FMT_ACTION="%F{196}%s %F{185}%r %F{208}%b %F{207}%a %F{40}%35<..<%S%<<%F{reset}"
+    local FMT_NOVCS="%F{40}%45<..<%~%<<%F{reset}"
 
 else
     # Set a b/w prompt
