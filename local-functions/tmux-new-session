@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+tmux-new-session() {
+    local session_name=$1
+
+    tmux new-session -d -n konsole -s $session_name
+    tmux new-window -d -n vim
+    tmux new-window -d -n workdir
+    tmux new-window -d -n ipython
+    tmux new-window -d -n sql
+}
