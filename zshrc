@@ -41,6 +41,7 @@ fi
 if whichhostname 'ariciputi'; then
     autoload -U srspath
     autoload -U tmux-new-session
+    autoload -U ips
 fi
 
 ## --

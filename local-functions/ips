@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+## ---
+## The function ips() executes a search on chef (via knife) and returns
+## the IP addresses of the corresponding hosts.
+##
+
+ips() {
+    all=$(knife search node "$1" | grep IP: | sed 's/IP:[[:space:]]*//g' | tr '\n' ' ')
+    echo $all
+}
