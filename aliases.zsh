@@ -26,5 +26,3 @@ fi
     alias lv='/usr/local/share/vim/vim74/macros/less.sh'
     alias vr='vim -R'
 
-    alias -g ..='cd ..'
-    alias -g ...='cd ../..'

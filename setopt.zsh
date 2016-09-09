@@ -16,7 +16,7 @@ setopt HIST_REDUCE_BLANKS           # Remove blanks
 ## ---
 ## Changing Directory
 
-setopt  NO_AUTO_CD                  # Disable auto cd
+setopt  AUTO_CD                     # Enable auto cd
 setopt  NO_CDABLE_VARS              # Do not complete cd with usernames
 setopt  NO_AUTO_PUSHD               # Do not push to dir stack automatically
 setopt  NO_CHASE_DOTS
