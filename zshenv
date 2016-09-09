@@ -28,7 +28,8 @@ fi
 
 ## ---
 ## Setup and export Linux PATH and MANPATH
-if whichplatform 'linux'; then
+if whichhostname 'ariciputi'; then
+    export PATH=/home/ariciputi/bin:$PATH
     export DISPLAY=:0.0
 fi
 
