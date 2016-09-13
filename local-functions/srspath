@@ -1,5 +1,14 @@
 # activate srs an a given branch
 
+function cdpy {
+    if [[ ! -d $BASE_DIR ]]; then
+        echo "No base dir set"
+        return 1
+    fi
+
+    cd $BASE_DIR/Python
+}
+
 function _srspath_activate {
     if [[ -z $1 ]]; then
         echo "Usage: srspath <repo_name>"
